@@ -1,0 +1,47 @@
+#{extends 'main.html' /}
+#{set title:'Cadastro do seu pet' /}
+
+<h1>#{get 'title' /}</h1>
+
+<form action="@{Pets.cadastrar}" method="POST" class="formulario">
+<input class="" type="hidden" name="m.id" value="${m?.id}"/>
+	<div class="mb-3">
+		<label class="form-label">Nome:</label>
+		
+		<input class="" type="text" name="m.nome" value="${m?.nome}"/>
+	</div>
+	
+	<div class="mb-3">
+		<label class="form-label">Idade do pet:</label>
+		<input class="" type="text" name="m.idade" value="${m?.idade}"/>
+	</div>
+	
+	<div class="mb-3">
+		<label class="form-label">Espécie:</label>
+		<input class="" type="text" name="m.especie" value="${m?.especie}"/>
+	</div>
+	
+	<div class="mb-3">
+		<label class="form-label">Detalhes do animal:</label>
+		<input class="" type="text" name="m.observacoes" value="${m?.observacoes}"/>
+	</div>
+	
+	<div class="mb-3">
+	<label class="form-label">Sexo:</label>
+		<RadioGroup>
+   <input  type="radio" name="m.sexo" value="Fêmea"/> Fêmea
+   <input  type="radio" name="m.sexo" value="Macho"/> Macho
+	
+  </RadioGroup>
+		</div>
+	
+Dono do pet:
+<select name="m?.dono?.id">
+#{list items: pessoas, as:'p'}
+<option value="${p.id}">${p.nome}</option>
+#{/list}
+</select>
+<br/>
+
+	<input class="btn btn-primary" type="submit" />
+</form>

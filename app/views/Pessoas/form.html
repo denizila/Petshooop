@@ -1,0 +1,48 @@
+#{extends 'main.html' /}
+#{set title:'Cadastro' /}
+
+<h1>#{get 'title' /}</h1>
+
+
+<fieldset>
+<Legend>Insira os dados requiridos</Legend>
+<form action="@{Pessoas.cadastrar}" method="POST" class="formulario">
+	<input class="" type="hidden" name="p.id" value="${p?.id}"/>
+	<div class="row">
+		<label class="form-label">Nome:</label>
+		<div class="col">
+		<input class="" type="text" name="p.nome" value="${p?.nome}"/>
+		</div>
+	</div>
+	
+	<div class="mb-3">
+	
+		<label class="form-label">Telefone:</label>
+		<div class="col">
+		<input class="" type="text" name="p.telefone" value="${p?.telefone}"/>
+		</div>
+	</div>
+	
+	<div class="mb-3">
+		<label class="form-label">E-mail:</label>
+		<div class="col">
+		<input class="" type="email" name="p.email" value="${p?.email}"/>
+		</div>
+	</div>
+	
+	<div class="mb-3">
+		<label class="form-label">Endereço:</label>
+		<div class="col">
+		<input class="" type="text" name="p.endereco" value="${p?.endereco}"/>
+		</div>
+	</div>
+	
+	<div class="mb-3">
+		<label class="form-label">Senha:</label>
+		<div class="col-2">
+		<input class="" type="password" name="p.senha" value="${p?.senha}"/>
+		</div>
+	</div>
+	<input class="btn btn-primary" type="submit" />
+</form>
+	</fieldset>
